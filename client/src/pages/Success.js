@@ -18,7 +18,7 @@ function Success() {
                     idbPromise('cart', 'delete', item);
                 });
             }
-            setTimeout(function() { window.location.assign('http://localhost:3000/')}, 3000);
+            setTimeout(function() { window.location.assign('https://bibo1011-shop-shop.herokuapp.com/')}, 3000);
         }
 
         saveOrder();
