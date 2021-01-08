@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from "react";
-import { useProductReducer } from './reducers';
+// import { useProductReducer } from './reducers';
 
 // data maintained by global state
 // eventually be able to add offline capabilities for our app with IndexedDB
