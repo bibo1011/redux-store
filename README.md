@@ -30,6 +30,17 @@
    
   Run `npm start` on root folder CLI. Open browser then go to localhost:3000 to view page.
 
+  Screenshots:
+
+  ![alt text](https://github.com/bibo1011/book-search-engine/raw/main/client/public/images/screenshots/ch22ss1.png "redux store ss1")
+
+  ![alt text](https://github.com/bibo1011/book-search-engine/raw/main/client/public/images/screenshots/ch22ss2.png "redux store ss2")
+
+  ![alt text](https://github.com/bibo1011/book-search-engine/raw/main/client/public/images/screenshots/ch22ss3.png "redux store ss3")
+
+
+  Link: https://bibo1011-redux-store.herokuapp.com/
+
   ## *Credits*
    
   UCB Bootcamp
