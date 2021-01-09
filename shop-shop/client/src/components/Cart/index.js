@@ -18,17 +18,20 @@ const Cart = () => {
     const state = useSelector(state => state)
     const dispatch = useDispatch();
 
+
+
     useEffect(() => {
         async function getCart() {
             const cart = await idbPromise('cart', 'get');
             dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
         };
 
-        if (!state.cart.length) {
+        if (!state.cart) {
             getCart();
         }
-    }, [state.cart.length, dispatch]);
-    
+        console.log(state.cart)
+    }, [state.cart, dispatch]);
+        
     useEffect(() => {
         if (data) {
             stripePromise.then((res) => {
