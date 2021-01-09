@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
-// import { useStoreContext } from "../utils/GlobalState";
-import Cart from "../components/Cart"
+import Cart from "../components/Cart";
 import { QUERY_PRODUCTS } from "../utils/queries";
-import spinner from '../assets/spinner.gif'
+import spinner from '../assets/spinner.gif';
 import { idbPromise } from "../utils/helpers";
 import { useSelector, useDispatch } from 'react-redux'
-
 
 import {
   REMOVE_FROM_CART,
@@ -17,24 +15,7 @@ import {
 } from '../utils/actions';
 
 function Detail() {
-  //display item data using useQuery
-  // const { id } = useParams();
-
-  // const [currentProduct, setCurrentProduct] = useState({})
-
-  // const { loading, data } = useQuery(QUERY_PRODUCTS);
-
-  // const products = data?.products || [];
-
-  // useEffect(() => {
-  //   if (products.length) {
-  //     setCurrentProduct(products.find(product => product._id === id));
-  //   }
-  // }, [products, id]);
-
-  // display item data using global state
-  // const [state, dispatch] = useStoreContext();
-
+  // display item data using redux
   const state = useSelector(state => state)
   const dispatch = useDispatch();
 
@@ -47,7 +28,6 @@ function Detail() {
   const { products, cart } = state;
 
   useEffect(() => {
-    // already in global store
     if (products.length) {
       setCurrentProduct(products.find(product => product._id === id));
     }

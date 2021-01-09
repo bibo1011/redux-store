@@ -1,6 +1,3 @@
-// import { useReducer } from 'react';
-
-
 import {
   UPDATE_PRODUCTS,
   UPDATE_CATEGORIES,
@@ -100,18 +97,3 @@ export const reducer = (state = initialState, action) => {
 
 export default reducer;
 
-// export function useProductReducer(initialState) {
-//   return useReducer(reducer, initialState);
-// }
-
-
-
-// import { combineReducers } from 'redux'
-
-// import updateReducer from '../features/products';
-
-// const rootReducer = combineReducers({  
-//     update: updateReducer(state.update, action)
-// })
-
-// export default rootReducer

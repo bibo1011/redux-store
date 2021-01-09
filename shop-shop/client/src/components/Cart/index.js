@@ -3,22 +3,18 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import './style.css';
-// import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
-
-
 
 const Cart = () => {
 
     const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
-    // const [state, dispatch] = useStoreContext();
     const state = useSelector(state => state)
     const dispatch = useDispatch();
 
@@ -32,6 +28,7 @@ const Cart = () => {
             getCart();
         }
     }, [state.cart.length, dispatch]);
+    
     useEffect(() => {
         if (data) {
             stripePromise.then((res) => {
@@ -43,6 +40,7 @@ const Cart = () => {
     function toggleCart() {
         dispatch({ type: TOGGLE_CART });
     }
+    
     function calculateTotal() {
         let sum = 0;
         state.cart.forEach(item => {

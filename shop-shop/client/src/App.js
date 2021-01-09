@@ -10,11 +10,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
 import OrderHistory from "./pages/OrderHistory";
-// import { StoreProvider } from "./utils/GlobalState";
 import { Provider } from 'react-redux'
 import store from '../src/utils/store'
-
-
 
 const client = new ApolloClient({
   request: (operation) => {
